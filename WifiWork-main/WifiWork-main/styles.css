@@ -1,0 +1,163 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #212936;
+    color: #d4d7e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-color: #273142;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    color: #ffd700;
+}
+
+header nav a {
+    margin: 0 15px;
+    color: #d4d7e0;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header .signup {
+    padding: 10px 20px;
+    background-color: #5ea4ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+main h1 {
+    font-size: 36px;
+    color: #a8b4cc;
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pricing-plan {
+    background-color: #2a3347;
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.pricing-plan h2 {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.pricing-plan .price {
+    font-size: 36px;
+    color: #ff87aa;
+    margin: 10px 0;
+}
+
+.pricing-plan .price span {
+    font-size: 16px;
+    color: #a8b4cc;
+}
+
+.pricing-plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.pricing-plan ul li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.pricing-plan ul .unavailable {
+    color: #787e8d;
+    text-decoration: line-through;
+}
+
+.pricing-plan .get-started {
+    background-color: #5ea4ff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pricing-plan.popular {
+    border: 2px solid #ff87aa;
+}
+
+.pricing-plan.popular h2::after {
+    content: "Most Popular ✨";
+    display: block;
+    font-size: 14px;
+    color: #ff87aa;
+    margin-top: 10px;
+}
+
+.signup-form {
+    background-color: #2a3347;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: 300px;
+    margin: 30px auto;
+}
+
+.signup-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #a8b4cc;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f2736;
+    color: #d4d7e0;
+}
+
+.signup-form input:focus {
+    outline: none;
+    border: 1px solid #5ea4ff;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5ea4ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #498ecc;
+}
