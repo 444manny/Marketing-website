@@ -11,24 +11,33 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
-// Set parameters and execute
-$name = $_GET['name'];
-$email = $_GET['email'];
-$phone = $_GET['phone'];
-$stmt->execute();
 
-INSERT INTO users(name, email, phone) VALUES('$name', '$email', '$phone');
-// Prepare and bind
-//$stmt = $conn->prepare("INSERT INTO users (name, email, phone) VALUES (?, ?, ?)");
-//$stmt->bind_param("sss", $name, $email, $phone);
+// Retrieve form data
+$name = $_POST['name'] ?? '';
+$email = $_POST['email'] ?? '';
+$phone = $_POST['phone'] ?? '';
 
+// Prepare the INSERT statement
+$stmt = $conn->prepare("INSERT INTO users (name, email, phone) VALUES (?, ?, ?)");
 
+// Check if the prepare() was successful
+if (!$stmt) {
+    die("Prepare failed: (" . $conn->errno . ") " . $conn->error);
+}
 
-echo $_POST["name"];
+// Bind parameters
+$stmt->bind_param("sss", $name, $email, $phone);
 
-echo "New record created successfully";
+// Execute the statement
+if ($stmt->execute()) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $stmt->error;
+}
 
+// Close the statement and connection
 $stmt->close();
 $conn->close();
 ?>
+
+
